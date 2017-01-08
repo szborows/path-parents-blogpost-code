@@ -1,0 +1,5 @@
+library(ggplot2)
+v <- read.table("results.data", header=TRUE, row.names="Title")
+c <- heat.colors(6)
+barplot(t(as.matrix(v)), beside=TRUE, col=c, ylab="execution time [s]")
+legend("topleft", names(v), cex=0.9, bty="n", fill=c)
